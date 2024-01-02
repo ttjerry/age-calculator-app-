@@ -64,7 +64,7 @@
         height: 15vh;
        }
 
-       .sub-container span span{
+       .sub-container span span:not(.error1,.error2,.error3){
         text-transform: uppercase;
         font-size: 12px;
         color: var(--smokegrey);
@@ -93,6 +93,9 @@
        .error1,.error2,.error3{
         position: absolute;
         top: 100%;
+        font-size: 11px;
+        text-wrap: nowrap;
+        color: red;
         margin-top: 10px;
        }
 
