@@ -10,25 +10,27 @@ let output3 = document.querySelector(".outputDays");
 //function to calculate the age
 //NB: this function will only be called when all validations are passed
 
-let displayErrors = () =>{
-    if (inputfields[0].value === " " || null) {
-        error1.style.display = "block";
+let displayErrors =()=>{
+    if (inputfields[0].value === "" || null) {
+        error1.textContent = "This field is required";
     } else {
-        error1.style.display = "block";
+        error1.textContent = " ";
     }
-    if (inputfields[1].value === " " || null) {
-        error2.style.display = "block";
+    if (inputfields[1].value === "" || null) {
+        error2.textContent = "This field is required";
     } else {
-        error1.style.display = "block";
+        error2.textContent = " ";
     }
-    if (inputfields[2].value === " " || null) {
-        error3.style.display = "block";
+
+    if (inputfields[2].value === "" || null) {
+        error3.textContent = "This field is required";
     } else {
-        error1.style.display = "none";
+        error3.textContent = " ";
     }
 }
 
-let calculate = () => {
+
+let calculate =()=> {
     const currentDate = new Date();
 
     let day = inputfields[0].value;
@@ -51,11 +53,12 @@ let calculate = () => {
 
 //input validation
 //to check if the input fields are empty
-let checkAge = () => {
+let checkAge =()=> {
    for (let i = 0; i < inputfields.length; i++) {
     if (inputfields[i].value ===""|| null) {
         displayErrors();
-    } else {
+    }
+    if (inputfields[0,1,2].value !="") {
         calculate();
     }
    }
